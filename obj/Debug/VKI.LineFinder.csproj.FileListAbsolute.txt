@@ -1,0 +1,7 @@
+C:\Users\asus\source\repos\VKI.LineFinder\bin\Debug\VKI.LineFinder.exe.config
+C:\Users\asus\source\repos\VKI.LineFinder\bin\Debug\VKI.LineFinder.exe
+C:\Users\asus\source\repos\VKI.LineFinder\bin\Debug\VKI.LineFinder.pdb
+C:\Users\asus\source\repos\VKI.LineFinder\obj\Debug\VKI.LineFinder.csprojAssemblyReference.cache
+C:\Users\asus\source\repos\VKI.LineFinder\obj\Debug\VKI.LineFinder.csproj.CoreCompileInputs.cache
+C:\Users\asus\source\repos\VKI.LineFinder\obj\Debug\VKI.LineFinder.exe
+C:\Users\asus\source\repos\VKI.LineFinder\obj\Debug\VKI.LineFinder.pdb

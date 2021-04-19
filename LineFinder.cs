@@ -6,34 +6,42 @@ namespace VKI.LineFinder
 {
     class LineFinder
     {
-        public static void СopyLinesToFile(string inputFile, string outputFile, int[] lineNumbers)
+        public LineFinder(ArgumentParser arguments)
         {
-            if(File.Exists(inputFile))
+            this.arguments = arguments;
+        }
+
+        public void ExtractLines()
+        {
+            // validation
+            if (!File.Exists(arguments.InputFileName))
             {
-                using (StreamReader sr = File.OpenText(inputFile))
+                throw new ArgumentException($"File is not exist: {arguments.InputFileName}");
+            }
+
+            // extraction
+            using (StreamReader reader = File.OpenText(arguments.InputFileName))
+            {
+                using (StreamWriter writer = File.CreateText(arguments.OutputFileName))
                 {
-                    using (StreamWriter sw = File.CreateText(outputFile))
+                    string line;
+                    int counter = 1;
+
+                    while (!reader.EndOfStream)
                     {
-                        string line;
-                        int counter = 1;
+                        line = reader.ReadLine();
 
-                        while ((line = sr.ReadLine()) != null)
+                        if (arguments.LinesNumbers.Contains(counter))
                         {
-                            if (lineNumbers.Contains(counter))
-                            {
-                                Console.WriteLine("line: " + line);
-                                sw.WriteLine(line);
-                            }
-
-                            ++counter;
+                            writer.WriteLine(line);
                         }
+
+                        counter++;
                     }
                 }
             }
-            else
-            {
-                Console.WriteLine($"Файла {inputFile} не существует или указан не верный путь");
-            }
         }
+
+        private ArgumentParser arguments;
     }
 }

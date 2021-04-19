@@ -4,10 +4,6 @@ namespace VKI.LineFinder
 {
     public class ArgumentParser
     {
-        private string inputFileName;
-        private string outputFileName;
-        private int[] linesNumbers;
-
         public ArgumentParser(string[] args)
         {
             inputFileName = args[0];
@@ -33,5 +29,9 @@ namespace VKI.LineFinder
 
             return list;
         }
+
+        private string inputFileName;
+        private string outputFileName;
+        private int[] linesNumbers;
     }
 }

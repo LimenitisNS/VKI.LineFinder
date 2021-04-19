@@ -6,9 +6,19 @@ namespace VKI.LineFinder
     {
         static void Main(string[] args)
         {
-            var parser = new ArgumentParser(args);
-            LineFinder.СopyLinesToFile(parser.InputFileName, parser.OutputFileName, parser.LinesNumbers);
-            Console.ReadKey();
+            try
+            {
+                var resolvedArgs = new ArgumentParser(args);
+                var finder = new LineFinder(resolvedArgs);
+
+                finder.ExtractLines();
+
+                Console.ReadKey();
+            }
+            catch (Exception exception)
+            {
+                Console.WriteLine(exception);
+            }
         }
     }
 }
